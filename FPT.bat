@@ -392,5 +392,5 @@ goto runallfiles
 cls
 title 正在操作
 ren *.* *.*.FPT
-title 操作完成！！！！
+start mshta vbscript:msgbox("操作完成！",0,"FPT by FIFCOM：")
 exit
