@@ -1,10 +1,11 @@
-@echo off 
+@echo off
 cls 
 setlocal ENABLEDELAYEDEXPANSION
 color 0b
 
 :power
 cls 
+title Files Protection Tool 
 echo ******************************************************************************* 
 echo.   
 echo                             Files Protection Tool                    BY  FIFCOM 
@@ -27,6 +28,7 @@ If "%select%"=="3" goto onepro
 goto power
 
 :onepro
+title Files Protection Tool (PRO)
 cls 
 echo ******************************************************************************* 
 echo.   
@@ -79,6 +81,7 @@ echo %file%|findstr /i "\.dll$">nul && goto err
 goto go
 :menu
 cls 
+title Files Protection Tool (单文件版)
 echo ******************************************************************************* 
 echo.   
 echo                       Files Protection Tool (单文件版)               BY  FIFCOM  
@@ -320,6 +323,7 @@ echo %file%|findstr /i "\.der$">nul && set format=161e351c&& goto go
 goto err
 
 :err
+title 文件搜索时错误
 cls 
 echo ******************************************************************************* 
 echo.   
@@ -341,6 +345,7 @@ echo.@echo off>@FPT-Release_Protection[%file%]@.bat
 echo.move /y  FPT.%file%.%format% %file%>>@FPT-Release_Protection[%file%]@.bat
 echo.del @FPT-Release_protection[%file%]@.bat>>@FPT-Release_Protection[%file%]@.bat
 cls
+title 保护完成
 echo ******************************************************************************* 
 echo.
 echo                       Files Protection Tool (单文件版)               BY  FIFCOM 
@@ -354,6 +359,7 @@ goto start
 
 :allfiles
 cls
+title Files Protection Tool (多文件版)
 echo ******************************************************************************* 
 echo.   
 echo                       Files Protection Tool (多文件版)               BY  FIFCOM 
@@ -384,5 +390,7 @@ goto runallfiles
 
 :runallfiles
 cls
+title 正在操作
 ren *.* *.*.FPT
+title 操作完成！！！！
 exit
